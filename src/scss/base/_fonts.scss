@@ -1,51 +1,55 @@
 @font-face {
-  font-family: 'WorkSans';
-  src: url('../fonts/worksans/WorkSans-Regular.eot');
-  src: url('../fonts/worksans/WorkSans-Regular.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/worksans/WorkSans-Regular.ttf') format('truetype'),
-       url('../fonts/worksans/WorkSans-Regular.woff') format('woff'),
-       url('../fonts/worksans/WorkSans-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Raleway';
+  src: url('../fonts/raleway/Raleway-Regular.woff2') format('woff2'),
+    url('../fonts/raleway/Raleway-Regular.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/montserrat/Montserrat-Medium.eot');
-  src: url('../fonts/montserrat/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/montserrat/Montserrat-Medium.svg#Montserrat-Medium') format('svg'),
-    url('../fonts/montserrat/Montserrat-Medium.ttf') format('truetype'),
-    url('../fonts/montserrat/Montserrat-Medium.woff') format('woff'),
-    url('../fonts/montserrat/Montserrat-Medium.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Raleway';
+  src: url('../fonts/raleway/Raleway-Italic.woff2') format('woff2'),
+    url('../fonts/raleway/Raleway-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/raleway/Raleway-Bold.woff2') format('woff2'),
+    url('../fonts/raleway/Raleway-Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/montserrat/Montserrat-SemiBold.eot');
-  src: url('../fonts/montserrat/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype'),
-       url('../fonts/montserrat/Montserrat-SemiBold.woff') format('woff'),
-       url('../fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
-  font-weight: 600;
+  font-family: 'PT Serif';
+  src: url('../fonts/PTserif/PTSerif-Italic.woff2') format('woff2'),
+    url('../fonts/PTserif/PTSerif-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src: url('../fonts/PTserif/PTSerif-BoldItalic.woff2') format('woff2'),
+    url('../fonts/PTserif/PTSerif-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src: url('../fonts/PTserif/PTSerif-Bold.woff2') format('woff2'),
+    url('../fonts/PTserif/PTSerif-Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/montserrat/Montserrat-Bold.eot');
-  src: url('../fonts/montserrat/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/montserrat/Montserrat-Bold.ttf') format('truetype'),
-       url('../fonts/montserrat/Montserrat-Bold.woff') format('woff'),
-       url('../fonts/montserrat/Montserrat-Bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'PT Serif';
+  src: url('../fonts/PTserif/PTSerif-Regular.woff2') format('woff2'),
+    url('../fonts/PTserif/PTSerif-Regular.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
-
-
-
-
-
-
-
