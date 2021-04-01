@@ -1,14 +1,4 @@
 // project main styles
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
   font-size: 16px;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
@@ -49,29 +39,31 @@ h5,
 h6 {
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
   margin: 0;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h1,
 h2 {
-  font-size: 30px;
-  line-height: 1.2em;
-  letter-spacing: 0.025em;
+  font-size: 64px;
+  line-height: 1.328em;
 }
 
 h3 {
-  font-size: 28px;
-  letter-spacing: 0.075em;
+  font-size: 30px;
+  line-height: 1.333em;
 }
 
 h4 {
   font-size: 24px;
-  letter-spacing: 0.025em;
+  line-height: 1.292em;
 }
 
 h5 {
   font-size: 18px;
-  letter-spacing: 0.075em;
+}
+
+h6 {
+  font-size: 16px;
 }
 
 .title-1 {
@@ -92,6 +84,10 @@ h5 {
 
 .title-5 {
   @extend h5;
+}
+
+.title-6 {
+  @extend h6;
 }
 
 a {
@@ -131,7 +127,7 @@ select::-ms-expand {
 
 p,
 li {
-  line-height: 1.714em;
+  line-height: 1.875em;
   margin: 0;
 }
 
@@ -143,10 +139,6 @@ ol {
   li {
     list-style: none;
   }
-}
-
-.section {
-  position: relative;
 }
 
 blockquote,
@@ -255,4 +247,22 @@ textarea {
   overflow: hidden;
   opacity: 1;
   transition: opacity $duration $timing;
+}
+
+.container {
+  @include m(1300) {
+    max-width: 1230px;
+  }
+
+  @include m(1500) {
+    max-width: 1470px;
+  }
+
+  @include d(991) {
+    max-width: 100%;
+  }
+}
+
+.section {
+  position: relative;
 }
