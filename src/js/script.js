@@ -1,9 +1,9 @@
-const humburger = $(".js-humburger");
-const headerMenu = $(".menu");
-const scrollBtn = $(".scroll-btn");
-const header = $(".header");
-const logoImg = $(".logo img");
-const practiceSlider = $('#practiceSlider');
+const humburger = document.querySelector(".js-humburger");
+const headerMenu = document.querySelector(".menu");
+const scrollBtn = document.querySelector(".scroll-btn");
+const header = document.querySelector(".header");
+const logoImg = document.querySelector(".logo img");
+const practiceSlider = document.querySelector('#practiceSlider');
 const testimonialsSlider = document.querySelector('#testimonialsSlider');
 
 

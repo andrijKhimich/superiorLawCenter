@@ -17,7 +17,8 @@
     margin-bottom: 20px;
     padding-bottom: 55px;
     border-bottom: 1px solid $borderColor;
-
+    position: relative;
+    z-index: 1;
     @include d(1440) {
       padding-bottom: 45px;
       margin-bottom: 13px;
@@ -28,6 +29,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
   }
 
   &__phone {

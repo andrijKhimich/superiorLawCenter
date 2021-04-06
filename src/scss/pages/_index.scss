@@ -51,8 +51,8 @@
     padding: 75px 0 76px 0;
   }
 
-  @include d(768) {
-    padding: 60px 0;
+  @include d(991) {
+    padding: 20px 0;
   }
 
   &__slider {
@@ -102,14 +102,10 @@
   }
 
   &__item {
-    width: 135px;
     width: 100%;
-    margin: 0 30px;
+    padding: 0 25px;
     position: relative;
-    height: 80px;
     outline: none;
-
-
   }
 
   &__img {
@@ -120,9 +116,9 @@
       height: 60px;
     }
 
-    img,
-    picture {
+    img {
       width: auto;
+      max-width: 90%;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -139,9 +135,22 @@
   bottom: -74px;
   right: 15px;
 
+  @include d(1199) {
+    padding: 0 15px;
+  }
+
+  @include d(991) {
+    position: static;
+    margin: 40px auto;
+  }
+
   &__header {
     padding: 30px 0;
     position: relative;
+
+    @include d(1199) {
+      padding: 15px 0;
+    }
 
     &::before {
       content: "";
@@ -151,12 +160,21 @@
       position: absolute;
       bottom: 0;
       left: -30px;
+
+      @include d(1199) {
+        width: calc(100% + 30px);
+        left: -15px;
+      }
     }
   }
 
   &__item {
     padding: 24px 0;
     position: relative;
+
+    @include d(1199) {
+      padding: 10px 0;
+    }
 
     &::before {
       content: "";
@@ -196,6 +214,10 @@
     padding: 24px 0;
     position: relative;
 
+    @include d(1199) {
+      padding: 15px 0;
+    }
+
     &::before {
       content: "";
       width: calc(100% + 60px);
@@ -204,6 +226,11 @@
       position: absolute;
       top: -1px;
       left: -30px;
+
+      @include d(1199) {
+        width: calc(100% + 30px);
+        left: -15px;
+      }
     }
   }
 }
@@ -243,11 +270,30 @@
 .defence {
   padding: 200px 0 175px 0;
 
+  @include d(1199) {
+    padding: 40px 0 80px 0;
+  }
+
+  @include d(991) {
+    padding: 20px 0 40px;
+  }
+  @include d(767) {
+    padding: 20px 0;
+  }
   &__img {
     max-width: 640px;
 
     @include d(1440) {
       max-width: 540px;
+    }
+
+    @include d(991) {
+      overflow: hidden;
+      position: absolute;
+      max-height: 500px;
+      top: 0;
+      left: 0;
+      opacity: .1;
     }
   }
 
@@ -260,20 +306,39 @@
     @include d(1440) {
       max-width: 540px;
     }
+
+    @include d(991) {
+      max-width: 100%;
+    }
   }
 
   &__title {
     width: 800px;
     position: relative;
     left: -200px;
+    right: 0;
     padding-top: 15px;
 
+    @include d(1199) {
+      left: -300px;
+    }
+
+    @include d(991) {
+      width: auto;
+      left: 0;
+    }
   }
 }
 
 .decade {
   padding: 234px 0 170px 0;
 
+  @include d(1199) {
+    padding: 40px 0;
+  }
+  @include d(767) {
+    padding: 20px 0;
+  }
   &::before {
     content: "";
     width: 100%;
@@ -281,6 +346,10 @@
     background-color: $grey-400;
     position: absolute;
     left: 0;
+
+    @include d(1199) {
+      display: none;
+    }
   }
 
   &__box {
@@ -292,13 +361,26 @@
     @include d(1440) {
       max-width: 540px;
     }
+
+    @include d(1199) {
+      position: static;
+      max-width: 100%;
+
+    }
   }
 
   &__content {
+    @include d(1199) {
+      margin-bottom: 60px;
+    }
 
     .title-2,
     & h2 {
       max-width: 560px;
+
+      @include d(1199) {
+        max-width: 100%;
+      }
     }
 
 
@@ -307,23 +389,54 @@
   &__text {
     column-count: 2;
     column-gap: 120px;
+
+    @include d(1199) {
+      column-gap: 60px;
+    }
+
+    @include d(991) {
+      column-count: 1;
+
+      p {
+        margin-bottom: 30px;
+      }
+
+    }
   }
 
   &__img {
     position: relative;
     max-width: 300px;
     margin: 0 auto 130px auto;
+
+    @include d(1199) {
+      margin: 0 auto 40px auto;
+
+    }
+
+    @include d(575) {
+      max-width: 220px;
+    }
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
     margin: 0 -15px;
+    flex-wrap: wrap;
   }
 
   &__item {
     flex: 0 0 33.333%;
     padding: 0 15px;
+
+    @include d(575) {
+      flex: 0 0 100%;
+      margin-bottom: 40px;
+      max-width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     &-img {
       width: 90px;
@@ -334,6 +447,10 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
+
+      @include d(575) {
+        margin: 0 auto;
+      }
 
       img,
       picture {
@@ -353,14 +470,26 @@
 .consultation {
   padding: 20px 0;
 
-
-
   &__content {
     padding: 98px 120px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+
+    @include d(1199) {
+      padding: 60px 80px
+    }
+
+    @include d(991) {
+      padding: 40px 60px
+    }
+
+    @include d(767) {
+      padding: 20px;
+      width: calc(100% + 30px);
+      margin: 0 -15px;
+    }
 
     &::before {
       content: "";
@@ -373,12 +502,15 @@
       top: 0;
       left: 0;
     }
-
   }
 
   &__title {
     position: relative;
     z-index: 1;
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
 
     .title-3,
     & h3 {
@@ -386,6 +518,23 @@
       font-size: 48px;
       color: $white;
       margin: 27px 0;
+
+      @include d(1199) {
+        font-size: 40px;
+        margin: 10px 0;
+      }
+
+      @include d(991) {
+        font-size: 36px;
+      }
+
+      @include d(767) {
+        font-size: 30px;
+      }
+
+      @include d(575) {
+        font-size: 26px;
+      }
     }
   }
 
@@ -396,6 +545,10 @@
     margin-right: 0;
     margin-left: auto;
 
+    @include d(991) {
+      max-width: 100%;
+    }
+
     .btn {
       width: 100%;
     }
@@ -405,24 +558,42 @@
 .capitalize {
   padding: 160px 0 210px;
 
+  @include d(1199) {
+    padding: 100px 0;
+  }
+
+  @include d(991) {
+    padding: 60px 0;
+  }
+
   .container {
     position: relative;
   }
 
   &__content {
-    p {
-      max-width: 540px;
+    max-width: 540px;
+
+    @include d(991) {
+      max-width: 100%;
     }
   }
 
   &__img {
     position: absolute;
-
     width: 100%;
     max-width: 540px;
     bottom: -540px;
     right: 15px;
     z-index: 1;
+
+    @include d(1199) {
+      max-width: 320px;
+      bottom: -200px;
+    }
+
+    @include d(991) {
+      display: none;
+    }
 
     &::before {
       content: "";
@@ -445,6 +616,17 @@
   background-position: center;
   color: $white;
 
+  @include d(1199) {
+    padding: 100px 0;
+    margin-bottom: 0;
+  }
+
+  @include d(991) {
+    padding: 60px 0;
+  }
+  @include d(767) {
+    padding: 20px 0;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -464,14 +646,32 @@
   &__content {
     max-width: 540px;
 
+    @include d(1199) {
+      margin-bottom: 40px;
+    }
+
+    @include d(991) {
+      max-width: 100%;
+
+    }
+
     &_bottom {
       margin-top: 80px;
+
+      @include d(1199) {
+        margin-top: 0;
+      }
     }
   }
 
   &__video {
     position: relative;
     bottom: -90px;
+
+    @include d(1199) {
+      bottom: 0;
+      margin-bottom: 40px;
+    }
   }
 }
 
@@ -482,6 +682,21 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include d(1199) {
+    width: 100%;
+    height: auto;
+    padding-bottom: 70%;
+
+  }
+
+  @include d(991) {
+    padding-bottom: 50%;
+  }
+
+  @include d(575) {
+    padding-bottom: 70%;
+  }
 }
 
 .play-btn {
@@ -498,21 +713,43 @@
   align-items: center;
   justify-content: center;
 
+  @include d(1199) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @include d(767) {
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+  }
+
   img,
   picture {
     width: 18px;
     margin-top: 5px;
+
+    @include d(767) {
+      margin-top: 0;
+      width: 12px;
+    }
   }
 }
 
 .arrested {
   padding: 190px 0 25px 0;
 
+  @include d(1199) {
+    padding: 80px 0 20px 0;
+  }
+  @include d(767) {
+    padding: 60px 0;
+  }
   &__row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 -40px;
+    margin: 0 -20px;
     counter-reset: my-counter;
   }
 
@@ -528,6 +765,11 @@
     position: relative;
     margin-bottom: 80px;
     counter-increment: my-counter;
+
+    @include d(575) {
+      flex: 0 0 100%;
+      margin: 0 auto 40px auto;
+    }
 
     &::before {
       content: "0"counter(my-counter);
@@ -558,6 +800,16 @@
     width: 100%;
     height: 540px;
 
+    @include d(1199) {
+      height: 420px;
+    }
+
+    @include d(767) {
+      height: 300px;
+      width: calc(100% + 30px);
+      margin: 0 -15px;
+    }
+
     &::before {
       content: "";
       width: 100%;
@@ -578,16 +830,41 @@
     z-index: 1;
     max-width: 470px;
 
-    .title-2,
-    & h2 {
-      font-size: 38px;
+    @include d(1199) {
+      bottom: 40px;
+      left: 80px;
     }
+
+    @include d(767) {
+      bottom: 20px;
+      left: 5px;
+    }
+
+    .title-3,
+    & h3 {
+      font-size: 38px;
+
+      @include d(767) {
+        font-size: 30px;
+        padding: 0 15px;
+      }
+    }
+
+
   }
 }
 
 
 .testimonials {
   padding: 200px 0 180px 0;
+
+  @include d(1199) {
+    padding: 60px 0;
+  }
+
+  @include d(767) {
+    padding: 20px 0;
+  }
 
   &::before {
     content: "";
@@ -602,6 +879,10 @@
 
   &__title {
     font-style: italic;
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
   }
 
   &__slider {
@@ -661,6 +942,14 @@
       font-size: 14px;
     }
   }
+
+  &__nav {
+    @include d(991) {
+      position: absolute;
+      bottom: -30px;
+      right: 15px;
+    }
+  }
 }
 
 .slider {
@@ -703,10 +992,24 @@
 }
 
 .goals {
-  padding: 175px 0 200px 0;
+  padding: 175px 0 300px 0;
 
+  @include d(1199) {
+    padding: 40px 0 200px 0;
+  }
+
+  @include d(991) {
+    padding: 40px 0;
+  }
+  @include d(767) {
+    padding: 20px 0;
+  }
   &__img {
     margin-right: 0;
     margin-left: auto;
+
+    @include d(991) {
+      display: none;
+    }
   }
 }
