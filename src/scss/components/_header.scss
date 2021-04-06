@@ -6,14 +6,129 @@
   width: 100%;
   padding: 0 20px;
   z-index: 1;
+  color: $white;
+  padding: 66px 0 20px 0px;
+
+  @include d(1440) {
+    padding: 50px 0 20px 0;
+  }
+
+  &_top {
+    margin-bottom: 20px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid $borderColor;
+
+    @include d(1440) {
+      padding-bottom: 45px;
+      margin-bottom: 13px;
+    }
+  }
 
   &-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
+  &__phone {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 180px;
+  position: absolute;
+  top: -125px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include d(1440) {
+    top: -105px;
+  }
+}
+
+.nav {
+  padding: 11px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      position: relative;
+
+      &:hover {
+        .submenu {
+          opacity: 1;
+          pointer-events: initial;
+          transform: translate(0, 0);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 80px;
+
+        @include d(1440) {
+          margin-right: 50px;
+        }
+      }
+
+      &_icon {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -10px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 6px 3px 0 3px;
+          border-color: $white transparent transparent transparent;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+
+    &__link {
+      padding: 0 10px;
+    }
+  }
+
+}
+
+.submenu {
+  position: absolute;
+  padding: 5px;
+  top: 100%;
+  left: 0;
+  background-color: $white;
+  width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 10px);
+  transition: opacity $hover-duration $timing, transform $hover-duration $timing;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__link {
+    color: $textColor;
+    transition: color $hover-duration $timing;
+    display: block;
+
+    @include rh(1024) {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
 }

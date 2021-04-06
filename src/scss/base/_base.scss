@@ -12,6 +12,7 @@ body {
   -webkit-text-size-adjust: 100%;
   backface-visibility: hidden;
   text-rendering: geometricPrecision;
+  margin: 0;
 
   //style default scrollbar
   &::-webkit-scrollbar {
@@ -46,6 +47,12 @@ h1,
 h2 {
   font-size: 64px;
   line-height: 1.328em;
+  text-transform: uppercase;
+  margin: 20px 0;
+
+  span {
+    color: $primary;
+  }
 }
 
 h3 {
@@ -56,6 +63,8 @@ h3 {
 h4 {
   font-size: 24px;
   line-height: 1.292em;
+  color: $primary;
+  font-style: italic;
 }
 
 h5 {
@@ -199,7 +208,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 textarea,
 input {
-  color: $textColor;
+  color: $grey;
   width: 100%;
   border: none;
   transition: border-color $timing $hover-duration,
@@ -212,26 +221,26 @@ input {
 
   &::-webkit-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
-    color: $textColor;
+    font-size: 14px;
+    color: $grey;
   }
 
   &::-moz-placeholder {
     font-family: inherit;
     font-size: 16px;
-    color: $black;
+    color: $grey;
   }
 
   &:-ms-input-placeholder {
     font-family: inherit;
-    font-size: 16px;
-    color: $black;
+    font-size: 14px;
+    color: $grey;
   }
 
   &::placeholder {
     font-family: inherit;
-    font-size: 16px;
-    color: $black;
+    font-size: 14px;
+    color: $grey;
   }
 }
 
@@ -240,6 +249,10 @@ textarea {
   outline: none;
   line-height: 1.2em;
   height: 100%;
+
+  &.form-input {
+    height: auto;
+  }
 }
 
 .main-wrapper {
@@ -265,4 +278,126 @@ textarea {
 
 .section {
   position: relative;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 21px;
+  font-size: 16px;
+  line-height: 1.18em;
+  text-transform: uppercase;
+  font-weight: bold;
+  min-width: 300px;
+  text-align: center;
+
+  &_primary {
+    color: $white;
+    background-color: $primary;
+  }
+}
+
+.section-content {
+  max-width: 640px;
+
+  @include d(1440) {
+    max-width: 540px;
+
+  }
+
+  .title-2,
+  & h2 {
+    margin-bottom: 80px;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  a,
+  span {
+    color: $primary;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin: 30px 0;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: $white;
+        position: absolute;
+        top: 10px;
+        left: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+.section-title {
+  margin-bottom: 80px;
+}
+
+.section-img {
+  max-width: 640px;
+
+  @include d(1440) {
+    max-width: 540px;
+  }
+}
+
+.form {
+  &-box {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+
+    .form-box {
+      padding: 0 10px 20px 10px;
+      flex: 0 0 50%;
+
+      @include d(767) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  &-input {
+    padding: 20px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    line-height: 1em;
+    color: $grey;
+    font-family: inherit;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  margin-bottom: 30px;
 }
