@@ -1,0 +1,155 @@
+// sidebar styles
+
+.sidebar {
+  max-width: 420px;
+  margin-right: 0;
+  margin-left: auto;
+
+  @include d(991) {
+    margin: 40px auto;
+  }
+
+  .title-2,
+  & h3 {
+    color: $primary;
+  }
+
+  &-widget {
+    border: 1px solid $primary;
+    padding: 50px 30px 50px 30px;
+    margin-bottom: 80px;
+
+    @include d(1199) {
+      margin-bottom: 40px;
+      padding: 30px 15px;
+    }
+
+    .btn {
+      width: 100%;
+      text-transform: capitalize;
+      margin-top: 30px;
+      min-width: 100%;
+    }
+
+    &>p {
+      margin-bottom: 30px;
+
+      @include d(991) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__form {
+      text-align: center;
+
+      p {
+        max-width: 300px;
+        margin: 0 auto 55px auto;
+      }
+    }
+
+    &__testimonials {
+      .testimonials__item {
+        padding: 0;
+        margin: 20px 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &__list {
+      ul {
+        font-family: 'PT Serif', 'Times New Roman', Times, serif;
+
+        li {
+          position: relative;
+          padding-left: 20px;
+
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+
+          &::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: $textColor;
+            position: absolute;
+            top: 13px;
+            left: 0;
+          }
+
+          a {
+            color: $textColor;
+            transition: color $hover-duration $timing;
+            position: relative;
+
+            &::before {
+              content: "";
+              width: 100%;
+              height: 1px;
+              background-color: $primary;
+              opacity: 0;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              transition: opacity $hover-duration $timing;
+            }
+
+            @include rh(1024) {
+              &:hover {
+                color: $primary;
+
+                &::before {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__arrow-link {
+    font-weight: normal;
+    font-family: 'PT Serif', 'Times New Roman', Times, serif;
+    font-size: 18px;
+    transition: color $hover-duration $timing;
+    padding-right: 40px;
+    margin-bottom: 10px;
+    color: $textColor;
+
+    &::before {
+      top: 12px;
+    }
+
+    @include rh(1024) {
+      &:hover {
+        color: $primary;
+
+      }
+    }
+  }
+}
+
+.sidebar-form {
+  .form-input {
+    border: 1px solid $borderColor;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+
+  li {
+    width: 15px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

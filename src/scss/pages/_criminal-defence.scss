@@ -1,0 +1,130 @@
+.article {
+  max-width: 700px;
+
+  @include d(1440) {
+    max-width: 600px;
+  }
+
+  @include d(991) {
+    max-width: 100%;
+  }
+
+  .title-4,
+  & h4 {
+    margin: 40px 0 20px 0;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  .title-2,
+  & h2 {
+    margin-bottom: 50px;
+
+    @include d(991) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &>p:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include d(991) {
+      margin-bottom: 20px;
+    }
+  }
+
+  a,
+  span {
+    color: $primary;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin: 30px 0;
+
+    @include d(991) {
+      margin: 20px 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: $primary;
+        position: absolute;
+        top: 10px;
+        left: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__testimonials {
+    width: 100%;
+    background-color: $grey-400;
+    margin: 40px 0;
+    padding: 50px;
+
+    @include d(1199) {
+      padding: 20px;
+    }
+
+    &::before {
+      top: 40px;
+      left: 40px;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    margin: 34px 0;
+  }
+}
+
+.trauma {
+  padding: 40px 0 80px 0;
+  background-color: $grey-400;
+
+  @include d(991) {
+    padding: 20px 0 40px 0;
+  }
+
+  &__img {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.myths {
+  padding: 80px 0;
+
+  @include d(1199) {
+    padding: 60px 0;
+  }
+
+  @include d(991) {
+    padding: 40px 0;
+  }
+}
+
+.about__article {
+  padding-bottom: 100px;
+
+  @include d(1199) {
+    padding-bottom: 80px;
+  }
+
+  @include d(991) {
+    padding-bottom: 40px;
+  }
+}

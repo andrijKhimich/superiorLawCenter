@@ -78,6 +78,7 @@ h2 {
 h3 {
   font-size: 30px;
   line-height: 1.333em;
+  margin: 13px 0;
 
   @include d(1199) {
     font-size: 26px;
@@ -96,6 +97,10 @@ h4 {
 
   @include d(1199) {
     font-size: 22px;
+  }
+
+  @include d(767) {
+    font-size: 20px;
   }
 }
 
@@ -326,7 +331,6 @@ textarea {
   white-space: nowrap;
 
   @include d(767) {
-    min-width: 100%;
     font-size: 14px;
     font-weight: 400;
     padding: 15px;
@@ -417,6 +421,11 @@ textarea {
   @include d(1440) {
     max-width: 540px;
   }
+
+  @include d(991) {
+    max-width: 700px;
+    margin: 40px auto;
+  }
 }
 
 .form {
@@ -474,6 +483,7 @@ textarea {
     @include d(767) {
       line-height: 50px;
       height: 50px;
+      padding: 0 10px;
     }
   }
 }
@@ -483,4 +493,76 @@ textarea {
   font-style: italic;
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
   margin-bottom: 30px;
+}
+
+.content {
+  padding: 160px 0 80px 0;
+
+  @include d(1199) {
+    padding: 100px 0 60px 0;
+  }
+
+  @include d(991) {
+    padding: 20px 0 60px 0;
+  }
+}
+
+.arrow-link {
+  display: block;
+  color: $primary;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 8px;
+    background-image: url(../img/arrow.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    transform: translate(0, 0);
+    transition: transform $hover-duration $timing;
+
+  }
+
+  @include rh(1024) {
+    &:hover {
+      &::before {
+        transform: translate(10px, 0);
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__link {
+    color: $textColor;
+    padding: 5px;
+    transition: color $hover-duration $timing;
+
+    @include rh(1024) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &.active {
+      color: $primary;
+    }
+  }
 }

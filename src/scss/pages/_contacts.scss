@@ -1,0 +1,12 @@
+.contacts {
+  padding-top: 280px;
+
+  &__content {
+    margin-top: 30px;
+
+    @include d(991) {
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+  }
+}

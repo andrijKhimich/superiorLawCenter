@@ -1,6 +1,10 @@
 .hero {
   padding-top: 200px;
 
+  @include d(991) {
+    padding-top: 100px;
+  }
+
   &-banner {
     background-size: cover;
     background-position: center;
@@ -141,7 +145,7 @@
 
   @include d(991) {
     position: static;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
   }
 
   &__header {
@@ -235,37 +239,6 @@
   }
 }
 
-.arrow-link {
-  display: block;
-  color: $primary;
-  font-size: 14px;
-  font-weight: 700;
-  position: relative;
-
-  &::before {
-    content: "";
-    width: 20px;
-    height: 8px;
-    background-image: url(../img/arrow.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 20px;
-    top: 8px;
-    transform: translate(0, 0);
-    transition: transform $hover-duration $timing;
-
-  }
-
-  @include rh(1024) {
-    &:hover {
-      &::before {
-        transform: translate(10px, 0);
-      }
-    }
-  }
-}
 
 .defence {
   padding: 200px 0 175px 0;
@@ -277,9 +250,11 @@
   @include d(991) {
     padding: 20px 0 40px;
   }
+
   @include d(767) {
     padding: 20px 0;
   }
+
   &__img {
     max-width: 640px;
 
@@ -336,9 +311,11 @@
   @include d(1199) {
     padding: 40px 0;
   }
+
   @include d(767) {
     padding: 20px 0;
   }
+
   &::before {
     content: "";
     width: 100%;
@@ -624,9 +601,11 @@
   @include d(991) {
     padding: 60px 0;
   }
+
   @include d(767) {
     padding: 20px 0;
   }
+
   &::before {
     content: "";
     position: absolute;
@@ -712,6 +691,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: $white;
 
   @include d(1199) {
     width: 120px;
@@ -742,9 +722,11 @@
   @include d(1199) {
     padding: 80px 0 20px 0;
   }
+
   @include d(767) {
     padding: 60px 0;
   }
+
   &__row {
     display: flex;
     justify-content: space-between;
@@ -992,24 +974,36 @@
 }
 
 .goals {
-  padding: 175px 0 300px 0;
+  padding: 175px 0 100px 0;
 
   @include d(1199) {
-    padding: 40px 0 200px 0;
+    padding: 40px 0;
   }
 
   @include d(991) {
     padding: 40px 0;
   }
+
   @include d(767) {
     padding: 20px 0;
   }
+
   &__img {
     margin-right: 0;
     margin-left: auto;
 
     @include d(991) {
       display: none;
+    }
+  }
+}
+
+.testimonials__content {
+  .testimonials__item {
+    margin: 60px 0;
+
+    @include d(991) {
+      margin: 40px 0;
     }
   }
 }
