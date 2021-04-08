@@ -188,6 +188,9 @@
           border-width: 6px 3px 0 3px;
           border-color: $white transparent transparent transparent;
           transition: transform $hover-duration $timing;
+          @include d(991) {
+            right: 5px;
+          }
         }
 
         &.active {
@@ -200,6 +203,11 @@
 
     &__link {
       padding: 0 10px;
+
+      @include d(991) {
+        width: 100%;
+      }
+
     }
   }
 
@@ -237,6 +245,7 @@
     color: $textColor;
     transition: color $hover-duration $timing;
     display: block;
+
 
     @include rh(1024) {
       &:hover {

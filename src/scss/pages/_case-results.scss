@@ -109,13 +109,14 @@
     position: absolute;
     bottom: 20px;
     left: 30px;
-
+    padding: 0 15px;
+    text-align: center;
     p {
       font-weight: 700;
     }
 
     span {
-      display: block;
+      display: inline-block;
       max-width: 200px;
     }
   }
