@@ -117,12 +117,13 @@ $(document).ready(function () {
 
   // serch active block
   $(document).mouseup(function (e) {
-    var searchcontainer = $('.nav.active, .humburger');
+    var searchcontainer = $('.nav.active, .humburger, .nav-menu__item_icon .nav-menu__link');
 
     if (!searchcontainer.is(e.target) && searchcontainer.has(e.target).length === 0) {
       closeMenu();
     }
   });
+
   humburger.click(function () {
     if ($(this).hasClass('open')) {
       closeMenu();
@@ -141,10 +142,6 @@ $(document).ready(function () {
   } else {
     setHomeHeader();
   }
-  // showContent();
-
-
-
 
   function initPartnersSlider() {
     const partnerSlider = document.querySelector('#partnerSlider.slick-slider');
@@ -206,62 +203,27 @@ $(document).ready(function () {
       $(this).parent().siblings('.accordion-list li').find('.accordion__plus').removeClass('accordion__plus_active');
     }
   });
+
+  $('#pagination').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7, ...100],
+    pageSize: 5,
+    showPrevious: false,
+    showNext: false,
+    callback: function (data, pagination) {
+      // template method of yourself
+      var html = template(data);
+      dataContainer.html(html);
+    }
+  })
+  
 });
 
-
-// slow scroll to id
-
-//   scrollBtn.click(function (e) {
-//     e.preventDefault();
-//     let link = $($(this).attr('href'))
-//     $('html, body').animate({
-//       scrollTop: link.offset().top
-//     }, 1000);
-//   });
-
-//   showOnScroll($(window).scrollTop());
 
 $(window).scroll(function () {
   const scrollValue = $(this).scrollTop();
-  // showOnScroll(scrollValue);
   scrollValue >= 1 ? closeMenu() : null;
-
-  // if (scrollValue > 1) {
-  //   header.addClass('sticky');
-  // } else {
-  //   header.removeClass('sticky');
-  //   // logoImg.attr("src", logoColorUrl);
-  // }
 });
 
-// $('.home-slider').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   autoplay: true,
-//   dots: true,
-//   arrows: false,
-//   infinite: true,
-//   fade: true,
-//   speed: 1000,
-//   cssEase: 'linear',
-//   autoplaySpeed: 10000
-// });
-// $('.testimonials-slider__wrapper').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   autoplay: true,
-//   dots: true,
-//   arrows: false,
-//   infinite: true,
-//   fade: true,
-//   speed: 1000,
-//   cssEase: 'linear',
-//   autoplaySpeed: 10000,
-//   arrows: true,
-//   prevArrow: $('.testimonials-slider_prev'),
-//   nextArrow: $('.testimonials-slider_next')
-// });
-// });
 svg4everybody();
 
 function testWebP(callback) {

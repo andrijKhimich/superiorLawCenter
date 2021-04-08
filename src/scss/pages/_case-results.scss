@@ -1,0 +1,122 @@
+.filter {
+  &-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+
+    @include d(767) {
+      margin-bottom: 20px;
+    }
+
+    @include d(575) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &-box {
+    position: relative;
+    margin-right: 80px;
+    width: 120px;
+
+    @include d(767) {
+      width: 20%;
+    }
+
+    @include d(575) {
+      width: 200px;
+    }
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 8px;
+      background-image: url(../img/down.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    font-size: 16px;
+    font-family: 'PT Serif', 'Times New Roman', Times, serif;
+    font-weight: 700;
+  }
+
+  &-result {
+    font-size: 16px;
+
+    &__number {
+      color: $primary;
+    }
+  }
+}
+
+.case-row {
+  display: flex;
+  margin: 40px -30px;
+  flex-wrap: wrap;
+
+  @include d(767) {
+    // margin: 20px -15px;
+  }
+
+  @include d(1299) {
+    margin: 20px -15px;
+
+
+  }
+}
+
+.case-col {
+  flex: 0 0 300px;
+  padding: 0 30px;
+  margin-bottom: 60px;
+
+  @include d(1299) {
+    margin-bottom: 30px;
+    padding: 0 15px;
+
+  }
+
+  @include d(1199) {
+    margin: 0 auto 30px auto;
+  }
+
+}
+
+.case-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $white;
+  min-height: 230px;
+  width: 300px;
+
+  &__content {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+
+    p {
+      font-weight: 700;
+    }
+
+    span {
+      display: block;
+      max-width: 200px;
+    }
+  }
+}
