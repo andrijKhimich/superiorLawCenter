@@ -7,7 +7,15 @@ const logoSource = $(".logo source");
 const practiceSlider = $('#practiceSlider');
 const testimonialsSlider = $('#testimonialsSlider');
 const windowWidth = $(window).width();
+const modalBtn = $('.modal-contact_primary');
+const modalBody = $('.modal-contact__body');
 
+
+
+function toggleModal() {
+  modalBody.slideToggle();
+  modalBtn.toggleClass('open');
+}
 
 function setContactHeader() {
   logoImg.attr("src", logoBlackUrl);
@@ -71,30 +79,6 @@ $(window).on('load', function () {
 });
 
 
-
-// function showOnScroll(scrollValue) {
-//   $('.js-scroll').each(function () {
-//     let elem = $(this);
-//     let sectionPos = elem.offset().top;
-//     let windowPos = $(window).scrollTop() + $(window).height() / 1.2;
-//     if (sectionPos < windowPos) {
-//       elem.removeClass('js-fadeIn js-slideLeft js-slideRight js-slideTop');
-//     }
-//   });
-
-//   $('.js-active').each(function () {
-//     let item = $(this);
-//     let sectionPos = item.offset().top;
-//     let windowPos = $(window).scrollTop() + $(window).height() / 2.8;
-//     if (sectionPos < windowPos) {
-//       item.addClass('active');
-//     } else {
-//       item.removeClass('active');
-//     }
-//   });
-// }
-
-
 $(document).ready(function () {
 
   // TOGGLE MAIN MENU //
@@ -130,6 +114,10 @@ $(document).ready(function () {
     } else {
       openMenu();
     }
+  });
+
+  modalBtn.click(function () {
+    toggleModal();
   });
   initPartnersSlider();
 
@@ -215,7 +203,7 @@ $(document).ready(function () {
       dataContainer.html(html);
     }
   })
-  
+
 });
 
 
