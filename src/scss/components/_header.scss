@@ -10,8 +10,27 @@
   padding: 66px 0 20px 0px;
   z-index: 2;
 
+
+  @include d(1440) {
+    padding: 50px 0 20px 0;
+  }
+
+  @include d(991) {
+    padding: 10px 0 5px 0;
+    // background-color: rgba(0, 0, 0, .8);
+    background-color: $coverColor;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   &_inner {
     color: $textColor;
+
+    @include d(991) {
+      background-color: $white;
+    }
 
     .humburger__item {
       background-color: $primary;
@@ -22,14 +41,6 @@
         color: $white;
       }
     }
-  }
-
-  @include d(1440) {
-    padding: 50px 0 20px 0;
-  }
-
-  @include d(991) {
-    padding: 20px 0;
   }
 
   &_top {
@@ -48,6 +59,7 @@
       padding-bottom: 0;
       border-bottom: none;
       padding-top: 10px;
+      margin-bottom: 0;
     }
   }
 
@@ -68,17 +80,15 @@
     }
 
     @include d(991) {
-      font-size: 16px;
-    }
-
-    @include d(767) {
       font-size: 14px;
+      display: none;
     }
   }
 
   &__text {
-    @include d(767) {
-      font-size: 14px;
+    @include d(991) {
+      // font-size: 14px;
+      display: none;
     }
   }
 }
@@ -99,7 +109,7 @@
     top: 0;
     left: 0;
     transform: translate(0, 0);
-    flex: 0 0 120px;
+    flex: 0 0 100px;
     z-index: 2;
   }
 }
@@ -188,6 +198,7 @@
           border-width: 6px 3px 0 3px;
           border-color: $white transparent transparent transparent;
           transition: transform $hover-duration $timing;
+
           @include d(991) {
             right: 5px;
           }

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <div class="main-wrapper home-page js-fadeIn">
+  <div class="main-wrapper criminal-page js-fadeIn">
     @@include('components/_header.html')
     <main class="main">
       <div class="section hero">
@@ -164,8 +164,8 @@
                   charged, read more about <a href="#">pre-file investigations.)</a></p>
               </article>
             </div>
-            <div class="col-lg-5">
-              <aside class="sidebar">
+            <div class="col-lg-5" id="replaceDesctop">
+              <aside class="sidebar" id="replaceEl">
                 <div class="sidebar-widget sidebar-widget__form">
                   <h3 class="title-3">GET ANSWERS TO ALL YOUR QUESTIONS</h3>
                   <p><strong>Can’t call? Message attorney Erik Friis directly and we’ll respond to your inquiry
@@ -182,8 +182,8 @@
                         <input type="text" placeholder="Phone Number" class="form-input">
                       </div>
                       <div class="form-box form-box__select">
-                        <select class="form-input"  aria-placeholder="Select Crime">
-                          <option value=""  disabled selected>Select Crime</option>
+                        <select class="form-input" aria-placeholder="Select Crime">
+                          <option value="" disabled selected>Select Crime</option>
                           <option value="Pre-File-investigation">Pre File Investigation</option>
                           <option value="drug-crimes">Drug Crimes</option>
                           <option value="sex-crimes">Sex Crimes</option>
@@ -379,6 +379,15 @@
                   </ul>
                 </div>
               </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div id="replaceMob"></div>
             </div>
           </div>
         </div>

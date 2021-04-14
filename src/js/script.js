@@ -17,6 +17,7 @@ function toggleModal() {
   modalBtn.toggleClass('open');
 }
 
+
 function setContactHeader() {
   logoImg.attr("src", logoBlackUrl);
   logoSource.attr("srcset", logoBlackSrcSet);
@@ -78,9 +79,17 @@ $(window).on('load', function () {
   detectSubMenu();
 });
 
-
 $(document).ready(function () {
 
+  function replace() {
+    if (($(window).width() < 991) && ($('.criminal-page').length > 0)) {
+      $('#replaceMob').append($('#replaceEl'));
+    } else {
+      $('#replaceDesctop').append($('#replaceEl'));
+    }
+  }
+
+  replace();
   // TOGGLE MAIN MENU //
   $(document).on('click', '.nav-menu__item_icon .nav-menu__link', function (e) {
 
@@ -119,21 +128,26 @@ $(document).ready(function () {
   modalBtn.click(function () {
     toggleModal();
   });
+
   initPartnersSlider();
 
   if (testimonialsSlider) {
     initTestimonialsSlider();
   }
 
-  if ($('.contact-page').length > 0) {
-    setContactHeader();
-  } else {
-    setHomeHeader();
+  setHeaderSettings();
+
+  function setHeaderSettings() {
+    if (($(window).width() > 991) && ($('.contact-page').length > 0)) {
+      setContactHeader();
+    } else {
+      setHomeHeader();
+    }
   }
 
   function initPartnersSlider() {
     const partnerSlider = document.querySelector('#partnerSlider.slick-slider');
-    if (window.innerWidth < 991 && !partnerSlider) {
+    if ($(window).width() < 991 && !partnerSlider) {
       $('#partnerSlider').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -171,8 +185,10 @@ $(document).ready(function () {
     }
   }
 
-  $(document).resize(function () {
+  $(window).on('resize', function () {
     initPartnersSlider();
+    replace();
+    setHeaderSettings();
   });
 
 
@@ -192,20 +208,12 @@ $(document).ready(function () {
     }
   });
 
-  $('#pagination').pagination({
-    dataSource: [1, 2, 3, 4, 5, 6, 7, ...100],
-    pageSize: 5,
-    showPrevious: false,
-    showNext: false,
-    callback: function (data, pagination) {
-      // template method of yourself
-      var html = template(data);
-      dataContainer.html(html);
-    }
-  })
-
 });
 
+// $(window).on('resize', function () {
+//   initPartnersSlider();
+//   replace();
+// });
 
 $(window).scroll(function () {
   const scrollValue = $(this).scrollTop();
